@@ -1,12 +1,14 @@
 <template>
     <div class="rounded-md bg-white">
-        <img :src="flag" :alt="alt">
-        <div class="p-5">
-            <h2 class="font-bold py-2">{{ country }}</h2>
-            <p class="font-semibold">Population: <span class="text-gray-500">{{ population }}</span></p>
-            <p class="font-semibold">Region: <span class="text-gray-500">{{ region }}</span></p>
-            <p class="font-semibold">Capital: <span class="text-gray-500">{{ capital }}</span></p>
-        </div>
+        <router-link :to="`/details/${country}`">
+            <img :src="flag" :alt="alt">
+            <div class="p-5">
+                <h2 class="font-bold py-2">{{ country }}</h2>
+                <p class="font-semibold">Population: <span class="text-gray-500">{{ population }}</span></p>
+                <p class="font-semibold">Region: <span class="text-gray-500">{{ region }}</span></p>
+                <p class="font-semibold">Capital: <span class="text-gray-500">{{ capital }}</span></p>
+            </div>
+        </router-link>
     </div>
 </template>
 <script>

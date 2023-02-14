@@ -100,6 +100,7 @@ watch(() => search.value, () => {
         store.dispatch('fetchCountries').then(() => {
             formatData()
         })
-    } })
+    } 
+})
 
 </script>
