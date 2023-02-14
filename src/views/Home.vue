@@ -27,69 +27,16 @@
 
             <!-- country cards -->
             <div class="grid grid-cols-4 gap-6 my-4">
-                <CountryCard 
-                    :flag="'https://flagcdn.com/af.svg'"
-                    :country="'Afghanistan'"
-                    :population="'38,928,346'"
-                    :region="'Asia'"
-                    :capital="'Kabul'"
-                />
 
-                <CountryCard 
-                    :flag="'https://flagcdn.com/al.svg'"
-                    :country="'Albania'"
-                    :population="'2,877,797'"
-                    :region="'Europe'"
-                    :capital="'Tirana'"
-                />
-
-                <CountryCard 
-                    :flag="'https://flagcdn.com/dz.svg'"
-                    :country="'Algeria'"
-                    :population="'43,851,044'"
-                    :region="'Africa'"
-                    :capital="'Algiers'"
-                />
-
-                <CountryCard 
-                    :flag="'https://flagcdn.com/ad.svg'"
-                    :country="'Andorra'"
-                    :population="'77,265'"
-                    :region="'Europe'"
-                    :capital="'Andorra la Vella'"
-
-                />
-
-                <CountryCard 
-                    :flag="'https://flagcdn.com/ao.svg'"
-                    :country="'Angola'"
-                    :population="'32,866,272'"
-                    :region="'Africa'"
-                    :capital="'Luanda'"
-                />
-
-                <CountryCard 
-                    :flag="'https://flagcdn.com/mw.svg'"
-                    :country="'Malawi'"
-                    :population="'18,90238'"
-                    :region="'Africa'"
-                />
-
-                
-                <CountryCard 
-                    :flag="'https://flagcdn.com/ao.svg'"
-                    :country="'Angola'"
-                    :population="'32,866,272'"
-                    :region="'Africa'"
-                    :capital="'Luanda'"
-
-                />
-
-                <CountryCard 
-                    :flag="'https://flagcdn.com/mw.svg'"
-                    :country="'Malawi'"
-                    :population="'18,90238'"
-                    :region="'Africa'"
+                <CountryCard v-for="country in countries" 
+                    :key="country.name.common" 
+                    :flag="country.flags.svg"
+                    :alt="country.flags.alt" 
+                    :country="country.name.common" 
+                    :population="country.population" 
+                    :region="country.region" 
+                    :capital="country.capital"
+                    
                 />
                 
             </div>
@@ -100,5 +47,15 @@
 <script setup>
 import Navbar from '../components/Navbar.vue'
 import CountryCard from '../components/CountryCard.vue'
+
+import {useStore} from 'vuex'
+import {computed, onMounted} from 'vue'
+const store = useStore();
+
+const countries = computed(() => store.state.countries)
+
+onMounted(() => {
+    store.dispatch('fetchCountries')
+})
 
 </script>
