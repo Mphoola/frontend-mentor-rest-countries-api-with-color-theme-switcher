@@ -17,7 +17,7 @@
                 <div>
                     <h1 class="font-bold text-xl py-4 md:py-0">Somalia</h1>
 
-                    <div class="flex space-x-12">
+                    <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-12">
                         <div>
                             <p class="font-semibold">Native Name: <span class="text-gray-500">Malawi</span></p>
                             <p class="font-semibold">Population: <span class="text-gray-500">102,290</span></p>
@@ -34,7 +34,7 @@
 
                     <div class="py-4 flex flex-col md:flex-row md:space-x-2">
                         <h1 class=" font-bold text-xl">Border Countries:</h1>
-                        <div class="flex space-x-2 pt-4 md:pt-0">
+                        <div class="flex flex-wrap gap-2 pt-4 md:pt-0">
                             <div class="bg-white border-2 px-6 py-1 items-center w-fit">
                                Mozambique
                             </div> 
