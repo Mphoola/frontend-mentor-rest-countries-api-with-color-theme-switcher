@@ -3,8 +3,6 @@
 </script>
 
 <template>
-  <div class="text-3xl text-center pt-6">
-    <h1>Lets start</h1>
-  </div>
+  <router-view></router-view>
 </template>
 
