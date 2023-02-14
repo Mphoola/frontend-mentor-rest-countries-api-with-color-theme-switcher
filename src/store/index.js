@@ -25,6 +25,12 @@ export default createStore({
             const data = await response.json();
             commit("SET_COUNTRIES", data);
         },
+
+        async searchCountries({ commit }, name) {
+            const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
+            const data = await response.json();
+            commit("SET_COUNTRIES", data);
+        },
        
         async fetchCountry({ commit }, name) {
             const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
