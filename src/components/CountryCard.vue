@@ -26,7 +26,7 @@ export default {
             required: true
         },
         population: {
-            type: String,
+            // type: String,
             required: true
         },
         region: {
@@ -34,7 +34,7 @@ export default {
             required: true
         },
         capital: {
-            type: String,
+            // type: String,
             required: true
         }
     }

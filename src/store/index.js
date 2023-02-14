@@ -17,9 +17,15 @@ export default createStore({
         async fetchCountries({ commit }) {
             const response = await fetch("https://restcountries.com/v3.1/all");
             const data = await response.json();
-            console.log(data);
             commit("SET_COUNTRIES", data);
         },
+
+        async filterCountriesByRegion({ commit }, region) {
+            const response = await fetch(`https://restcountries.com/v3.1/region/${region}`);
+            const data = await response.json();
+            commit("SET_COUNTRIES", data);
+        },
+       
         async fetchCountry({ commit }, name) {
             const response = await fetch(`https://restcountries.com/v3.1/name/${name}`);
             const data = await response.json();
