@@ -15,7 +15,7 @@
             <div class="flex flex-col md:flex-row md:items-center mt-8 md:space-x-6">
                 <img src="https://flagcdn.com/w320/mw.png" alt="">
                 <div>
-                    <h1 class="font-bold text-xl py-4 md:py-0 dark:text-white">Malawi</h1>
+                    <h1 class="font-bold text-xl py-4 md:py-0 dark:text-white">{{ country.name.common }}</h1>
 
                     <div class="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-12">
                         <div>
@@ -39,10 +39,10 @@
                                Mozambique
                             </div> 
                             <div class="bg-white dark:bg-[#2B3743] dark:text-white dark:border-none border-2 px-6 py-1 items-center w-fit">
-                               Mozambique
+                               Zimbabwe
                             </div> 
                             <div class="bg-white dark:bg-[#2B3743] dark:text-white dark:border-none border-2 px-6 py-1 items-center w-fit">
-                               Mozambique
+                               Tanzania
                             </div> 
                         </div>
                     </div>
@@ -74,7 +74,7 @@ export default {
 
         onMounted(() => {
             store.dispatch('fetchCountry', props.name).then(() => {
-                country.value = store.getters.getCountry
+                country.value = store.getters.getCountry[0]
                 console.log(country.value)
             })
         })
